@@ -114,7 +114,7 @@ function compPlays(){
     } else {
         roboChoice = "scissors";
 }
-return roboChoice;
+    return roboChoice;
 }
 
 function rockPaperScissors(choice) {
@@ -199,7 +199,37 @@ function letterGrade(grade) {
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
+function compPlays(){
+    let roboChoice = Math.random();
 
+    if (roboChoice < .33) {
+        roboChoice = "rock";
+    } else if (roboChoice < .66 ) {
+        roboChoice = "paper";
+    } else {
+        roboChoice = "scissors";
+}
+    return roboChoice;
+}
+
+let choice = prompt("Choose: rock, paper, or scissors");
+
+function updated_rockPaperScissors(choice) {
+    const roboChoice = compPlays();
+
+    if (choice === roboChoice){
+        return "Tie."
+    }
+    else if (choice === "rock" && roboChoice === "scissors" ||
+        choice === "scissors" && roboChoice === "paper" ||
+        choice === "paper" && roboChoice === "rock") {
+            return "You won.";
+    } else {
+        return "You lost.";
+    }
+}
+
+console.log(updated_rockPaperScissors(choice));
 
 
 
